@@ -1,0 +1,35 @@
+<!-- questions.html -->
+
+{% extends 'base.html' %}
+{% block title %}Questions - Voting App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center mb-4">Questions</h2>
+
+            {% if questions %}
+            {% for question in questions %}
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5>{{ question.title }}</h5>
+                </div>
+                <div class="card-body">
+                    <p>{{ question.description }}</p>
+                    <ul class="list-group">
+                        {% for option in question.options.all %}
+                        <li class="list-group-item">{{ option.text }}</li>
+                        {% endfor %}
+                    </ul>
+                    <button class="btn btn-primary mt-2">Vote</button>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="text-center">No questions available.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

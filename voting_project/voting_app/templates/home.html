@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Voting App{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid bg-dark text-light text-center">
+    <div class="container">
+      <h1 class="display-4">Welcome to the Voting App!</h1>
+      <p class="lead">This is a simple voting application built with Django.</p>
+      <hr class="my-4">
+      <p>Click the buttons below to get started:</p>
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-3">
+          <a class="btn btn-primary btn-lg btn-block" href="{% url 'contact' %}" role="button">Contact Us</a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <a class="btn btn-success btn-lg btn-block" href="{% url 'login' %}" role="button">Login</a>
+        </div>
+        <div class="col-md-4">
+          <a class="btn btn-info btn-lg btn-block" href="{% url 'signup' %}" role="button">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
